@@ -16,8 +16,8 @@ pub mod swap {
     use super::*;
 
     pub fn make_offer(ctx: Context<MakeOffer>) -> Result<()> {
-        instructions::make_offer::send_offered_tokens_to_vault(&ctx)?;
-        instructions::make_offer::save_offer()?;
+        instructions::make_offer::send_offered_tokens_to_vault(&ctx, 67)?;
+        instructions::make_offer::save_offer(ctx, 0, 50)?;
         Ok(())
     }
 }
